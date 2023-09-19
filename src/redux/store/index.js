@@ -11,7 +11,7 @@ import jobsReducer from "../reducers/jobsReducer";
 const persistConfig = {
   key: "root",
   storage,
-  transforms: [encryptTransform({ secretKey: "my-inviolate-secret-key" })],
+  transforms: [encryptTransform({ secretKey: process.env.REACT_APP_PERSIST_KEY })],
 };
 
 const rootReducer = combineReducers({
